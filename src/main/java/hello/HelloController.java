@@ -8,7 +8,11 @@ public class HelloController {
     
     @RequestMapping("/")
     public String index() {
-        return "Greetings from Spring Boot!";
+        // return "Greetings from Spring Boot!";
+        String html = "<h1>Hello World!</h1>\n" +
+            "<p>This web app is powered by \n" +
+            "<a href='https://github.com/weiqingqi/spring-boot-minimal-webapp'>this github repo</a></p>\n";
+        return html;
     }
     
 }
