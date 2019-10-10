@@ -19,6 +19,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 @AutoConfigureMockMvc
 public class HelloControllerTest {
 
+
+
     @Autowired
     private MockMvc mvc;
 
@@ -26,6 +28,8 @@ public class HelloControllerTest {
     public void getHello() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Greetings from Spring Boot!")));
+                .andExpect(content().string(equalTo("<h1>Hello World!</h1>\n" +
+                "<p>This web app is powered by \n" +
+                "<a href='https://github.com/weiqingqi/spring-boot-minimal-webapp'>this github repo</a></p>\n")));
     }
 }
